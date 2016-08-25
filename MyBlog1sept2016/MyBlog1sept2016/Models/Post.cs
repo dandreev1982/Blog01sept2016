@@ -23,7 +23,7 @@ namespace MyBlog1sept2016.Models
         [Required]
         public string Body { get; set; }
 
-        [Required]
+        
         public DateTime Date { get; set; }
 
         public ApplicationUser Author { get; set; }
