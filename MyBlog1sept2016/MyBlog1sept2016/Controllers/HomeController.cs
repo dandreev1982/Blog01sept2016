@@ -1,8 +1,10 @@
-﻿using System;
+﻿using MyBlog1sept2016.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+
 
 namespace MyBlog1sept2016.Controllers
 {
@@ -10,15 +12,11 @@ namespace MyBlog1sept2016.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            var db = new ApplicationDbContext();
+            var post = db.Posts.OrderByDescending(p => p.Date).Take(5);
+            return View(post.ToList());
         }
 
-        public ActionResult About()
-        {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
-        }
 
         public ActionResult Contact()
         {
