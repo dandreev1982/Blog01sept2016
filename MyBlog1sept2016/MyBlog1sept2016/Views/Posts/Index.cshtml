@@ -7,10 +7,14 @@
 <h2>Публикации</h2>
 
 <p>
-    @Html.ActionLink("Нова публикация", "Create")
+    @if (User.Identity.IsAuthenticated)
+    {
+        @Html.ActionLink("Нова публикация", "Create")
+    }
+    
 </p>
 <table class="table">
-    <tr>
+    <tr class="titleRow">
         <th>
             Заглавие
         </th>
@@ -27,9 +31,9 @@
             Действия
         </th>
     </tr>
-
+    
 @foreach (var item in Model) {
-    <tr>
+    <tr class="normalRow">
         <td>
             @Html.DisplayFor(modelItem => item.Title)
         </td>

@@ -23,7 +23,11 @@
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Начало", "Index", "Home")</li>
                     <li>@Html.ActionLink("Публикации", "Index", "Posts")</li>
-                    <li>@Html.ActionLink("Нова Публикация", "Create", "Posts")</li>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <li>@Html.ActionLink("Нова Публикация", "Create", "Posts")</li>
+                    }
+                    
                     <li>@Html.ActionLink("Контакти", "Contact", "Home")</li>
                 </ul>
                 @Html.Partial("_LoginPartial")

@@ -2,7 +2,7 @@
     padding-top: 50px;
     padding-bottom: 20px;
     background: center;
-    background-image: url('../Images/Savin-NY-Website-Background-Web.jpg');
+    background-image: url('../Images/Background.jpg');
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -31,11 +31,9 @@ textarea {
     opacity:0.7;
 }
 .post{
-    
     margin-top: 10px;
-    
 }
-.post>h2{
-    
+.titleRow{
+    background: #808080;
 }
 

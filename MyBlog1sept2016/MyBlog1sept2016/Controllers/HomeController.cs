@@ -14,6 +14,7 @@ namespace MyBlog1sept2016.Controllers
         {
             var db = new ApplicationDbContext();
             var post = db.Posts.OrderByDescending(p => p.Date).Take(3);
+            
             return View(post.ToList());
         }
 
