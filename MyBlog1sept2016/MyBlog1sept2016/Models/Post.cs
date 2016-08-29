@@ -27,8 +27,8 @@ namespace MyBlog1sept2016.Models
 
         
         public DateTime Date { get; set; }
-        //public string Author_Id { get; set; }
-        //[ForeignKey("Author_Id")]
+        public string Author_Id { get; set; }
+        [ForeignKey("Author_Id")]
         public ApplicationUser Author { get; set; }
     }
 }

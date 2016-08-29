@@ -75,7 +75,10 @@ namespace MyBlog1sept2016.Controllers
             {
                 return HttpNotFound();
             }
+            var authors = db.Users.ToList();
+            ViewBag.Authors = authors;
             return View(post);
+
         }
 
         // POST: Posts/Edit/5
@@ -84,7 +87,7 @@ namespace MyBlog1sept2016.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize(Roles = "Administrator")]
-        public ActionResult Edit([Bind(Include = "Id,Title,Body,Date")] Post post)
+        public ActionResult Edit([Bind(Include = "Id,Title,Body,Date,Author_Id")] Post post)
         {
             if (ModelState.IsValid)
             {

@@ -66,3 +66,4 @@ D:\Snimki\Dropbox\SOFTUNI Github\Blog01sept2016\MyBlog1sept2016\MyBlog1sept2016\
 D:\Snimki\Dropbox\SOFTUNI Github\Blog01sept2016\MyBlog1sept2016\MyBlog1sept2016\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 D:\Snimki\Dropbox\SOFTUNI Github\Blog01sept2016\MyBlog1sept2016\MyBlog1sept2016\obj\Debug\MyBlog1sept2016.dll
 D:\Snimki\Dropbox\SOFTUNI Github\Blog01sept2016\MyBlog1sept2016\MyBlog1sept2016\obj\Debug\MyBlog1sept2016.pdb
+D:\Snimki\Dropbox\SOFTUNI Github\Blog01sept2016\MyBlog1sept2016\MyBlog1sept2016\obj\Debug\MyBlog1sept2016.csprojResolveAssemblyReference.cache

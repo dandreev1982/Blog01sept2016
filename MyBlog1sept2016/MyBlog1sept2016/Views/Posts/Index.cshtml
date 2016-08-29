@@ -1,4 +1,4 @@
-﻿@model IEnumerable<MyBlog1sept2016.Models.Post>
+﻿@model List<MyBlog1sept2016.Models.Post>
 @using MyBlog1sept2016.Classes;
 @{
     ViewBag.Title = "Index";
@@ -34,8 +34,8 @@
     
 @foreach (var item in Model) {
     <tr class="normalRow">
-        <td>
-            @Html.DisplayFor(modelItem => item.Title)
+        <td class="postTitle">
+            <strong>@item.Title</strong>
         </td>
         <td>
             @Utils.CutText(item.Body, 100)

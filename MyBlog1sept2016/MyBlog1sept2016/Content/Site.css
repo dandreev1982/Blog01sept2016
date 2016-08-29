@@ -36,4 +36,9 @@ textarea {
 .titleRow{
     background: #808080;
 }
-
+.navbar, .navbar-inverse, .navbar-fixed-top{
+    background-color:#414141;
+}
+.postTitle{
+    background-color:#d3d3d3
+}
