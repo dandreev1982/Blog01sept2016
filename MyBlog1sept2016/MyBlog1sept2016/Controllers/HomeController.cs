@@ -14,7 +14,7 @@ namespace MyBlog1sept2016.Controllers
         public ActionResult Index()
         {
             var db = new ApplicationDbContext();
-            var post = db.Posts.Include(p=>p.Author).OrderByDescending(p => p.Date).Take(3);
+            var post = db.Posts.Include(p=>p.Author).OrderByDescending(p => p.Date).Take(5);
             
             return View(post.ToList());
         }

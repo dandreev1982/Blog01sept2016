@@ -28,7 +28,8 @@ namespace MyBlog1sept2016.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Post post = db.Posts.Find(id);
+            Post post = db.Posts.Include(p=>p.Author).SingleOrDefault(p=>p.Id==id);
+            
             if (post == null)
             {
                 return HttpNotFound();
@@ -63,18 +64,23 @@ namespace MyBlog1sept2016.Controllers
         }
 
         // GET: Posts/Edit/5
-        [Authorize(Roles ="Administrator")]
+        [Authorize]
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Post post = db.Posts.Find(id);
+            Post post = db.Posts.Include(p=>p.Author).SingleOrDefault(p=>p.Id == id);
             if (post == null)
             {
                 return HttpNotFound();
             }
+            if (post.Author.UserName != User.Identity.Name && !User.IsInRole("Administrator"))
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            
             var authors = db.Users.ToList();
             ViewBag.Authors = authors;
             return View(post);
@@ -86,7 +92,7 @@ namespace MyBlog1sept2016.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [Authorize(Roles = "Administrator")]
+        [Authorize]
         public ActionResult Edit([Bind(Include = "Id,Title,Body,Date,Author_Id")] Post post)
         {
             if (ModelState.IsValid)
