@@ -2,7 +2,8 @@
     padding-top: 50px;
     padding-bottom: 20px;
     background: center;
-    background-image: url('../Images/Background.jpg');
+    background-image: url('../Images/background-1.jpg');
+    
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -24,21 +25,58 @@ select,
 textarea {
     max-width: 280px;
 }
-.post>h2, .post>div{
-    padding:5px;
-    background: #eaeaea;
-    margin:0px;
-    opacity:0.7;
+.post > h3, .post > div {
+    padding: 5px;
+    background: #e4e4e4;
+    
+    margin: 0px;
+    opacity: 0.7;
 }
 .post{
     margin-top: 10px;
+}
+.post>h3{
+    border-top-left-radius:10px;
+    border-top-right-radius:10px;
+}
+.body{
+    border-bottom-left-radius:10px;
+    border-bottom-right-radius:10px;
+    
 }
 .titleRow{
     background: #808080;
 }
 .navbar, .navbar-inverse, .navbar-fixed-top{
-    background-color:#414141;
+   
 }
 .postTitle{
-    background-color:#d3d3d3
+    background:#d3d3d3;
+    background: #808080;
+}
+.sidebar {
+    margin-top: 10px;
+    background:#000000;
+    opacity:0.9;
+    border-radius: 1px;
+    padding-bottom: 10px;
+}
+.sidebar>div, .sidebar>h4{
+    padding-left:5px;
+}
+.sidebar>div{
+    padding-bottom: 5px;
+}
+.sidebar>h4{
+    padding-bottom: 10px;
+    padding-top:10px;
+}
+.sidebar>div>span{
+    font-size:13px;
+}
+.zaglavieDetails{
+    background:#808080;
+}
+.deistviq{
+    background:#e4e4e4;
 }

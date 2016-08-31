@@ -4,27 +4,35 @@
     ViewBag.Title = "Home Page";
 }
 
-<div class="row">
+<aside class="sidebar col-md-2">
+    <h4><strong><font color="grey">Последни публикации:</font></strong></h4>
+
     @foreach (var post in Model)
+            {
+        <div><a href="~/Posts/Details/@post.Id"><font color="grey">@post.Title...</font></a>@*<span>- <i>@post.Date</i></span>*@</div>
+    }
+    
+</aside>
+
+
+<div class="col-md-10">
+    @for (int i = 0; i < 4; i++)
     {
-        ViewBag.PostTitle = post.Title;
+        ViewBag.PostTitle = Model[i].Title;
+        
             <div class="post col-md-6">
-                <h2 class="title"><a href="~/Posts/Details/@post.Id">@post.Title</a></h2>
+                <h3 class="title"><a href="~/Posts/Details/@Model[i].Id"><font color="black">@Model[i].Title</font></a></h3>
                 <div class="about">
                     Публикувано
-                    @if (post.Author != null)
-                    {
+                    @if (Model[i].Author != null)
+                {
                         @: от
-                        <i>@post.Author.Fullname (@post.Author.UserName)</i>
+                        <i>@Model[i].Author.Fullname  @*(@Model[i].Author.UserName)*@</i>
                     }
-
-                    на <i>@post.Date</i>
+                    на <i>@Model[i].Date</i>
                 </div>
-                <div class="body">@Html.Raw(Utils.CutText(post.Body, 250)) </div>
-              
+                <div class="body">@Html.Raw(Utils.CutText(Model[i].Body, 700)) </div>
             </div>
         
     }
-  
-   
 </div>
