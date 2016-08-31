@@ -135,4 +135,3 @@ C:\Users\Jeni\Desktop\MyBlog1sept2016\MyBlog1sept2016\bin\Microsoft.Owin.Securit
 C:\Users\Jeni\Desktop\MyBlog1sept2016\MyBlog1sept2016\obj\Debug\MyBlog1sept2016.csprojResolveAssemblyReference.cache
 C:\Users\Jeni\Desktop\MyBlog1sept2016\MyBlog1sept2016\obj\Debug\MyBlog1sept2016.dll
 C:\Users\Jeni\Desktop\MyBlog1sept2016\MyBlog1sept2016\obj\Debug\MyBlog1sept2016.pdb
-D:\Snimki\Dropbox\SOFTUNI Github\Blog01sept2016\MyBlog1sept2016\MyBlog1sept2016\obj\Debug\MyBlog1sept2016.csprojResolveAssemblyReference.cache

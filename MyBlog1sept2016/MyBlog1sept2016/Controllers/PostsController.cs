@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using MyBlog1sept2016.Models;
+using MyBlog1sept2016.Extensions;
 
 namespace MyBlog1sept2016.Controllers
 {
@@ -57,6 +58,7 @@ namespace MyBlog1sept2016.Controllers
                 post.Author = db.Users.FirstOrDefault(u => u.UserName == User.Identity.Name);
                 db.Posts.Add(post);
                 db.SaveChanges();
+                this.AddNotification("Публикацията беше създадена.", NotificationType.INFO);
                 return RedirectToAction("Index");
             }
 
@@ -99,6 +101,7 @@ namespace MyBlog1sept2016.Controllers
             {
                 db.Entry(post).State = EntityState.Modified;
                 db.SaveChanges();
+                this.AddNotification("Публикацията беше редактирана.", NotificationType.INFO);
                 return RedirectToAction("Index");
             }
             return View(post);
@@ -129,6 +132,7 @@ namespace MyBlog1sept2016.Controllers
             Post post = db.Posts.Find(id);
             db.Posts.Remove(post);
             db.SaveChanges();
+            this.AddNotification("Публикацията беше изтрита.", NotificationType.INFO);
             return RedirectToAction("Index");
         }
 
